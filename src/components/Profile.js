@@ -28,8 +28,7 @@ const Profile = ({ id, onBack, onSelectLocation }) => {
             <ListGroup.Item>Major: {profile.major}</ListGroup.Item>
             <ListGroup.Item>H-index: {profile.hindex}</ListGroup.Item>
             <ListGroup.Item>
-              Location: 
-              <a href="#" onClick={() => onSelectLocation(profile.location_id)}>
+              Location: <a href="#" onClick={() => onSelectLocation(profile.location_id)}>
                 {profile.location}
               </a>
             </ListGroup.Item>
