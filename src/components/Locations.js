@@ -69,7 +69,7 @@ const Locations = ({ onSelectLocation }) => {
         <tbody>
           {locations.map((location) => (
             <tr key={location[0]}>
-              <td><a onClick={() => onSelectLocation(location[0])}>{location[1]}</a></td>
+              <td><a href="#" onClick={() =>  onSelectLocation(location[0])}>{location[1]}</a></td>
               <td>{location[2]}</td>
             </tr>
           ))}

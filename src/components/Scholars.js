@@ -96,7 +96,7 @@ const Scholars = ({ onSelectScholar }) => {
         <tbody>
           {scholars.map((scholar) => (
             <tr key={scholar[0]}>
-              <td><a onClick={() => onSelectScholar(scholar[0])}>{scholar[1]}</a></td>
+              <td><a href="#" onClick={() => onSelectScholar(scholar[0])}>{scholar[1]}</a></td>
               <td>{scholar[2]}</td>
               <td>{scholar[3]}</td>
             </tr>
