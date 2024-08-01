@@ -14,7 +14,6 @@ function ScholarList() {
         <div className="container">
             <h2>Scholar List</h2>
             <ul className="list-group">
-                {/* TODO: Backend seems to be sending 9559 empty entries so this produces an error */}
                 {scholars.map(scholar => (
                     <li key={scholar.pid} className="list-group-item">
                         {scholar.name} ({scholar.majorarea})
