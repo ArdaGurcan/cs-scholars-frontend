@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Tabs from '@/components/Tabs';
 import Scholars from '@/components/Scholars';
 import Locations from '@/components/Locations';
-import Miscellaneous from '@/components/Miscellaneous';
 import Profile from '@/components/Profile';
 import LocationProfile from '@/components/LocationProfile';
 
@@ -41,17 +40,12 @@ const App = () => {
       );
     }
 
-    switch (activeTab) {
-      case 'Scholars':
-        return <Scholars onSelectScholar={handleSelectScholar} />;
-      case 'Locations':
-        return <Locations onSelectLocation={handleSelectLocation} />;
-
-      case 'Miscellaneous':
-        return <Miscellaneous />;
-      default:
-        return <Scholars onSelectScholar={handleSelectScholar} />;
+    if (activeTab === 'Locations') {
+      return <Locations onSelectLocation={handleSelectLocation} />;
     }
+
+    return <Scholars onSelectScholar={handleSelectScholar} />;
+
   };
 
   return (
