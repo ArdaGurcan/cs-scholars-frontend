@@ -160,6 +160,7 @@ const AddScholarForm = ({ newScholar, onScholarChange, onAddScholar }) => (
             placeholder="Enter name"
             value={newScholar.name}
             onChange={onScholarChange}
+            data-testid="new-scholar-name"
           />
         </Form.Group>
       </Col>
@@ -172,6 +173,7 @@ const AddScholarForm = ({ newScholar, onScholarChange, onAddScholar }) => (
             placeholder="Enter major"
             value={newScholar.major}
             onChange={onScholarChange}
+            data-testid="new-scholar-major"
           />
         </Form.Group>
       </Col>
@@ -184,6 +186,7 @@ const AddScholarForm = ({ newScholar, onScholarChange, onAddScholar }) => (
             placeholder="Enter h-index"
             value={newScholar.hindex}
             onChange={onScholarChange}
+            data-testid="new-scholar-hindex"
           />
         </Form.Group>
       </Col>
@@ -196,11 +199,12 @@ const AddScholarForm = ({ newScholar, onScholarChange, onAddScholar }) => (
             placeholder="Enter location"
             value={newScholar.location}
             onChange={onScholarChange}
+            data-testid="new-scholar-location"
           />
         </Form.Group>
       </Col>
     </Row>
-    <Button variant="primary" onClick={onAddScholar} className="mt-2">
+    <Button variant="primary" onClick={onAddScholar} className="mt-2" data-testid="add-new-scholar-button">
       Add New Scholar
     </Button>
   </Form>
