@@ -14,23 +14,23 @@ describe('Scholars Component', () => {
   test('1. Creates a new scholar and verifies backend storage', async () => {
     const mockOnSelectScholar = jest.fn()
     render(<Scholars onSelectScholar={mockOnSelectScholar} />)
-  
+
     const newScholar = {
       name: 'John Doe',
       major: 'Computer Science',
       hindex: '10',
       location: 'University of Example'
     }
-  
+
     fireEvent.change(screen.getByTestId('new-scholar-name'), { target: { value: newScholar.name } })
     fireEvent.change(screen.getByTestId('new-scholar-major'), { target: { value: newScholar.major } })
     fireEvent.change(screen.getByTestId('new-scholar-hindex'), { target: { value: newScholar.hindex } })
     fireEvent.change(screen.getByTestId('new-scholar-location'), { target: { value: newScholar.location } })
-  
+
     axios.post.mockResolvedValueOnce({ data: newScholar })
-  
+
     fireEvent.click(screen.getByTestId('add-new-scholar-button'))
-  
+
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith('http://localhost:8080/api/scholar/add', null, { params: newScholar })
     })
